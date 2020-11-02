@@ -1,0 +1,91 @@
+.post-form-container {
+  margin-top: 30px !important;
+  width: 700px !important;
+}
+
+.post-from-user-picture {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 10px 10px 10px 10px;
+}
+
+.post-form-card {
+  background-color: lightsteelblue !important;
+}
+
+.post-form-body {
+  display: flex;
+}
+
+.post-form-textarea {
+  margin-top: 10px !important;
+  width: 480px !important;
+}
+
+.upload-button {
+  display: inline-block;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: lightsteelblue;
+  font-size: 12px;
+  /* width: 105px !important; */
+  /* z-index: 1 !important; */
+  margin-left: -60px !important;
+  /* width: 125px !important; */
+}
+
+#upload {
+  position: absolute;
+  margin-top: -1000px;
+  margin-left: -80px !important;
+  margin-top: 15px;
+  margin-left: -50px !important;
+  z-index: -1;
+  top: 6px;
+  left: 0;
+  font-size: 1px;
+  font-weight: bold;
+  color: black;
+}
+
+.post-buttons {
+  position: relative;
+  display: flex;
+  /* z-index: 1 !important; */
+  margin-top: 10px !important;
+  margin-left: 50px !important;
+}
+
+.upload-button-icon {
+  margin-left: 0px !important;
+  width: 50px;
+  height: 50px;
+}
+
+.post-submit-button {
+  background-color: lightsteelblue;
+  border: 0px solid lightsteelblue;
+}
+
+.post-submit-button-icon {
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+}
+
+.fileName {
+  margin-top: 20px !important;
+  font-weight: bold !important;
+  font-size: 20px !important;
+  margin-right: 20px !important ;
+}
+
+.post-errorMessage {
+  color: red;
+  font-size: 20px;
+  /* margin-top: -20px; */
+  margin-bottom: 20px;
+  font-weight: bold;
+}

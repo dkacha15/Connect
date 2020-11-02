@@ -1,0 +1,9 @@
+.home-head {
+  color: lightsteelblue;
+  transform: rotate(-90deg);
+  float: left;
+  font-size: 80px;
+  margin-top: 15%;
+  margin-left: -4.5%;
+  position: fixed !important;
+}

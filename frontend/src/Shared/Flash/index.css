@@ -1,0 +1,27 @@
+.alert {
+    color: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 15px;
+    align-items: center;
+    z-index: 1111;
+    width:480px;
+    float:right
+}
+
+.alert p {
+margin: 0;
+}
+.alert-error {
+background: lightcoral;
+}
+.alert-success {
+background: lightgreen;
+}
+.close {
+color: white;
+cursor: pointer;
+margin-right: 10px;
+}

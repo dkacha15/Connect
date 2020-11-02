@@ -1,0 +1,54 @@
+.event-form {
+  margin-top: 5%;
+  padding: 5%;
+  margin-left: 13%;
+  display: block;
+  text-align: left;
+}
+
+#event-block {
+  border-radius: 20px;
+  padding: 2%;
+  margin-top: 3%;
+  background-color: lightsteelblue;
+}
+
+.form-group {
+  align-content: center;
+}
+
+.event-head {
+  color: lightsteelblue;
+  transform: rotate(-90deg);
+  float: left;
+  font-size: 80px;
+  margin-top: 15%;
+  margin-left: -7%;
+}
+
+.add-event {
+  text-align: center;
+  font-weight: bold;
+}
+
+.event-ip {
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+  background: black;
+  color: white;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+
+.event-icon {
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+}
+
+.viewmodal {
+  background: lightsteelblue;
+}
+

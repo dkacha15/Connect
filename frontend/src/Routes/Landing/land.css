@@ -1,0 +1,69 @@
+body,
+html {
+  height: 100%;
+}
+
+.land-body {
+  background-image: url("https://www.linuxfoundation.org/wp-content/uploads/2017/11/cog_bg_networking.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  padding-top: 0.1px;
+}
+
+.land-header {
+  margin-top: 0%;
+  margin-left: 4%;
+}
+.land-a {
+  color: lightsteelblue;
+  font-size: 60px;
+  margin-left: 0;
+}
+.land-c {
+  color: lightsteelblue;
+  font-size: 60px;
+  margin-left: 6%;
+  margin-top: -1%;
+}
+
+.land-head {
+  color: #dc143c;
+  font-size: 80px;
+  margin-left: 10%;
+  margin-top: -1%;
+}
+
+.land-link:hover {
+  text-decoration: none;
+}
+
+.land-title {
+  color: #dc143c;
+  font-size: 40px;
+  font-weight: 800;
+  font-family: "Montserrat Subrayada", sans-serif;
+  margin-bottom: 5%;
+}
+
+.land-des {
+  margin-left: 30%;
+  margin-top: 16%;
+}
+
+.land-btn {
+  color: black;
+  width: 10%;
+  height: 80px;
+  margin-left: 15%;
+  border-radius: 80%;
+  background-color: white;
+  cursor: pointer;
+}
+
+.land-img {
+  height: 50px;
+  width: 50px;
+}

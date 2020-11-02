@@ -1,0 +1,75 @@
+.connect-nav-bar {
+  position: fixed !important;
+}
+
+.notification-count {
+  background-color: red !important;
+}
+
+.notification {
+  margin-top: 4px !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+}
+
+.notification-heading {
+  font-weight: bold;
+  text-align: center;
+}
+
+.elink {
+  text-decoration: none !important;
+  color: black !important;
+  font-size:50px !important;
+}
+
+
+.notifications {
+  overflow-y: scroll;
+  max-height: 500px !important;
+}
+.notifications-card {
+  background-color: lightsteelblue !important;
+  margin-top: 5px !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+  margin-bottom: 5px !important;
+  display: flex !important;
+}
+
+.notifications-user-picture {
+  border: 1px solid black !important;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: 5px !important;
+  margin-left: 5px !important;
+}
+
+.notifications-text {
+  font-weight: bold;
+  font-size: 18px !important;
+  margin-top: -30px !important;
+  margin-left: 50px !important;
+}
+
+.marked {
+  font-weight: 500 !important;
+}
+
+.notification-time {
+  margin-right: 5px !important;
+  font-style: italic !important;
+  margin-top: -17px !important;
+  float: right !important;
+}
+
+.marked-all {
+  font-weight: bold !important;
+  float: right !important;
+  background-color: lightsteelblue !important;
+  border: lightsteelblue !important;
+  color: black !important;
+  margin-right: 5px !important;
+  margin-bottom: 5px !important;
+}

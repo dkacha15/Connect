@@ -1,0 +1,78 @@
+.skill-ratings {
+  overflow-y: scroll;
+  max-height: 500px !important;
+}
+
+.skill-rating-heading {
+  font-weight: bold;
+  text-align: center;
+}
+
+.skill-rating-form {
+  display: flex !important;
+  margin-bottom: 5px !important;
+}
+
+.skill-rating-submit-button {
+  border-radius: 5px !important;
+  background-color: lightsteelblue;
+  border: 0px solid lightsteelblue;
+}
+
+.comment-rating-button-icon {
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+}
+
+.skill-rating-text {
+  margin-left: 5px !important;
+  width: 280px !important;
+  background-color: lightsteelblue !important;
+  font-weight: 600 !important;
+  color: black !important;
+}
+
+.skill-rating-progress-bar {
+  margin-right: 10px !important;
+  margin-left: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.skill-rating-card {
+  background-color: lightsteelblue !important;
+  margin-top: 5px !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+  margin-bottom: 5px !important;
+  display: flex !important;
+}
+
+.skill-rating-user-picture {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: 5px !important;
+  margin-left: 5px !important;
+}
+
+.skill-rating-name {
+  font-weight: bold;
+  font-size: 18px !important;
+  margin-top: -30px !important;
+  margin-left: 50px !important;
+}
+
+.skill {
+  cursor: pointer !important;
+  float: right !important;
+  font-size: 20px !important;
+  margin-top: 5px !important;
+  margin-bottom: -5px !important;
+}
+
+.breaker {
+  height: auto;
+  width:2px;
+  background-color:steelblue;
+}

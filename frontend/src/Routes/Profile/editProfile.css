@@ -1,0 +1,16 @@
+.edit-ip {
+  width: 180px;
+  height: 40px;
+  border-radius: 10px;
+  background: black;
+  color: white;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}

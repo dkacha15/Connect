@@ -1,0 +1,85 @@
+body,
+html {
+  height: 100%;
+}
+
+.reg-body {
+  background-image: url("https://www.linuxfoundation.org/wp-content/uploads/2017/11/cog_bg_networking.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  padding-top: 0.1px;
+}
+
+.reg-head {
+  color: lightsteelblue;
+  transform: rotate(-90deg);
+  float: left;
+  font-size: 80px;
+  margin-top: 16%;
+  margin-left: -7%;
+}
+
+.reg-form-body {
+  background-color: lightsteelblue;
+  height: 545px;
+  width: 30%;
+  margin: 4% 0 0 38%;
+  padding: 0.3% 0 3% 0;
+  border-radius: 6%;
+  text-align: center;
+  font-size: 30px;
+}
+
+.form-head {
+  text-align: center;
+  font-size: 30px;
+  margin: 5%;
+}
+
+.reg-form {
+  margin: auto;
+}
+
+.form-ip {
+  width: 300px;
+  min-height: 30px;
+  border-radius: 10px;
+  background: black;
+  color: white;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form-icon {
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+}
+
+.form-btn {
+  background-color: lightsteelblue;
+  border: 0px solid lightsteelblue;
+  cursor: pointer;
+}
+
+.id-ip {
+  width: 185px;
+  height: 40px;
+  border-radius: 10px;
+  background: black;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 30px;
+}
+
+.suffix {
+  font-size: 20px;
+  display: inline-block;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}

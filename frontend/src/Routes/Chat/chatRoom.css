@@ -1,0 +1,370 @@
+/* Khyati */
+
+.chatbox-container {
+  margin-top: 20px !important;
+  margin-left: -1% !important;
+  width: 700px !important;
+}
+
+.chatbox-card {
+  background-color: black !important;
+  height: 550px !important;
+}
+
+.chatbox-header {
+  display: flex !important;
+  background-color: steelblue !important;
+}
+
+.chatbox-user-picture {
+  border-radius: 50%;
+  border: 1px solid black !important;
+  width: 50px;
+  height: 50px;
+  margin-top: 5px !important;
+  margin-left: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+.chatbox-body {
+  overflow-y: scroll !important;
+  height: 750px !important;
+  position: relative !important;
+}
+
+.chatbox-input {
+  color: black !important;
+  font-weight: bold !important;
+  background-color: steelblue !important;
+  width: 805px !important;
+}
+
+.chatbox-username {
+  font-weight: bold !important;
+  margin-left: 10px !important;
+  font-size: 25px !important;
+  margin-top: 10px !important;
+}
+
+.slide-left {
+  margin-left: 5px !important;
+  max-width: 450px !important;
+  float: left;
+}
+
+.slide-right {
+  margin-right: 5px !important;
+  max-width: 450px !important;
+  float: right;
+}
+
+.message {
+  font-size: 19px;
+  font-weight: 600 !important;
+  color: black;
+}
+
+.bubble {
+  margin-top: 10px !important ;
+  margin-bottom: 10px !important;
+  background-color: lightsteelblue !important;
+  border-radius: 10px !important;
+  padding: 7px 15px;
+  display: inline-block;
+}
+
+.chat {
+  position: relative !important;
+  overflow: hidden;
+}
+
+.chat-send {
+  background-color: steelblue;
+  border: 1px solid white;
+  border-radius: 5px !important;
+}
+
+.chat-send-icon {
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+}
+
+.chatbox-inputs {
+  display: flex;
+}
+
+.chatRoom {
+  display: flex !important;
+}
+
+.chats-container {
+  margin-left: -3% !important;
+  margin-top: 20px !important;
+  width: 370px !important;
+}
+
+.chats-card {
+  max-height: 850px !important;
+  overflow-y: scroll !important;
+  background-color: steelblue !important;
+}
+
+.chats-heading {
+  text-align: center !important;
+  font-weight: bold !important;
+}
+
+.chats-list {
+  border-radius: 2% !important;
+  margin: 5px 5px 5px 5px !important;
+  background-color: lightsteelblue;
+  display: flex !important;
+}
+
+.chats-list-user-picture {
+  margin-left: 5px !important;
+  margin-top: 4px !important;
+  margin-bottom: 5px !important;
+  border-radius: 50%;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.chats-list-username {
+  margin-left: 10px !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  margin-top: 5px !important;
+}
+
+.chat-list-message {
+  font-size: 15px !important;
+  margin-top: -6px !important;
+  margin-left: 10px !important;
+}
+
+.chat-list-message-date {
+  font-size: 15px !important;
+  margin-top: -15px !important;
+  margin-left: 100px !important;
+}
+
+.chat-list-message-time {
+  font-size: 15px !important;
+  margin-top: -5px !important;
+  margin-left: 210px !important;
+}
+
+.chat-message-time {
+  float: right !important;
+  font-size: 12px !important;
+  color: black;
+}
+
+.emoji-picker {
+  width: 100px !important;
+  z-index: 3 !important;
+  background-color: white !important;
+  margin-left: 370px !important;
+  margin-top: -410px !important;
+}
+
+#chat::placeholder {
+  color: black;
+  opacity: 1;
+}
+
+.upload-button-icon-chat {
+  margin-left: 0px !important;
+  width: 50px;
+  height: 50px;
+}
+
+.upload-button-chat {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: steelblue;
+  font-size: 12px;
+}
+
+.endOfMessages {
+  margin-bottom: 0px !important;
+}
+
+/* Dhruv */
+
+/*
+.chatbox-container {
+  margin-top: 20px !important;
+  margin-left: -400px !important;
+  width: 900px !important;
+}
+
+.chatbox-card {
+  background-color: black !important;
+  height: 850px !important;
+}
+
+.chatbox-header {
+  display: flex !important;
+  background-color: steelblue !important;
+}
+
+.chatbox-user-picture {
+  border-radius: 50%;
+  border: 1px solid black !important;
+  width: 50px;
+  height: 50px;
+  margin-top: 5px !important;
+  margin-left: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+.chatbox-body {
+  overflow-y: scroll !important;
+  height: 750px !important;
+  position: relative !important;
+}
+
+.chatbox-input {
+  color: black !important;
+  font-weight: bold !important;
+  background-color: steelblue !important;
+  width: 805px !important;
+}
+
+.chatbox-username {
+  font-weight: bold !important;
+  margin-left: 10px !important;
+  font-size: 25px !important;
+  margin-top: 10px !important;
+}
+
+.slide-left {
+  margin-left: 5px !important;
+  max-width: 450px !important;
+  float: left;
+}
+
+.slide-right {
+  margin-right: 5px !important;
+  max-width: 450px !important;
+  float: right;
+}
+
+.message {
+  font-size: 19px;
+  font-weight: 600 !important;
+  color: black;
+}
+
+.bubble {
+  margin-top: 10px !important ;
+  margin-bottom: 10px !important;
+  background-color: lightsteelblue !important;
+  border-radius: 10px !important;
+  padding: 7px 15px;
+  display: inline-block;
+}
+
+.chat {
+  position: relative !important;
+  overflow: hidden;
+}
+
+.chat-send {
+  background-color: steelblue;
+  border: 1px solid white;
+  border-radius: 5px !important;
+}
+
+.chat-send-icon {
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+}
+
+.chatbox-inputs {
+  display: flex;
+}
+
+.chatRoom {
+  display: flex !important;
+}
+
+.chats-container {
+  margin-left: 50px !important ;
+  margin-top: 20px !important;
+  width: 400px !important;
+}
+
+.chats-card {
+  max-height: 850px !important;
+  overflow-y: scroll !important;
+  background-color: steelblue !important;
+}
+
+.chats-heading {
+  text-align: center !important;
+  font-weight: bold !important;
+}
+
+.chats-list {
+  border-radius: 2% !important;
+  margin: 5px 5px 5px 5px !important;
+  background-color: lightsteelblue;
+  display: flex !important;
+}
+
+.chats-list-user-picture {
+  margin-left: 5px !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  border-radius: 50%;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.chats-list-username {
+  margin-left: 10px !important;
+  font-weight: bold !important;
+}
+
+.chat-list-message {
+  font-size: 17px !important;
+  margin-top: -6px !important;
+  margin-left: 10px !important;
+}
+
+.chat-list-message-date {
+  font-size: 15px !important;
+  margin-top: -15px !important;
+  margin-left: 140px !important;
+}
+
+.chat-list-message-time {
+  font-size: 15px !important;
+  margin-top: -5px !important;
+  margin-left: 220px !important;
+}
+
+.chat-message-time {
+  float: right !important;
+  font-size: 13px !important;
+  color: black;
+}
+
+.emoji-picker {
+  width: 100px !important;
+  z-index: 3 !important;
+  background-color: white !important;
+  margin-left: 580px !important;
+  margin-top: -410px !important;
+}
+
+#chat::placeholder {
+  color: black;
+  opacity: 1;
+} */
