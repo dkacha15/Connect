@@ -21,6 +21,7 @@ const EventForm = () => {
   const [edate, setDate] = useState(new Date());
   const [poster, setPoster] = useState("");
   const [venue, setVenue] = useState("");
+  const [time, setTime] = useState("");
   const [registration_link, setLink] = useState("");
   const [loading, setLoading] = useState();
   const [message, setMessage] = useState("");
@@ -64,9 +65,11 @@ const EventForm = () => {
           },
           credentials: "include",
           body: JSON.stringify({
+            userid,
             name,
             description,
             edate,
+            time,
             poster_url: result.url,
             venue,
             registration_link,
@@ -170,6 +173,8 @@ const EventForm = () => {
             name,
             description,
             edate,
+            time,
+            userid,
             poster_url: result.url,
             venue,
             registration_link,
@@ -303,6 +308,17 @@ const EventForm = () => {
               style={{ width: 250 + "px" }}
               selected={edate}
               onChange={(date) => setDate(date)}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              className="event-ip"
+              type="text"
+              name="time"
+              placeholder="Event Time"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+              required
             />
           </div>
           <div className="form-group">

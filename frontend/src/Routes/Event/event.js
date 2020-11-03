@@ -119,6 +119,7 @@ const Event = () => {
           {events.map((item) => {
             t=false;
             const id=events.indexOf(item);
+            console.log(item.interested);
             return (
               <div key={item._id} className="col-lg-5">
                 <div className="card event-card">
@@ -136,6 +137,9 @@ const Event = () => {
                       <span>Event Date:</span>{" "}
                       {moment(item.date).format("DD/MM/YYYY")}
                       <br />
+                      <span>Event Time:</span>{" "}
+                      {item.time}
+                      <br />
                       <span>Event Venue:</span>
                       {item.venue}
                       <br />
@@ -148,14 +152,16 @@ const Event = () => {
                       key={item._id}
                       className="btn btn-primary"
                       onClick={()=>checkstats(id,item._id)}>
-                      { 
-                        item.interested.map((u)=>{
+                      {
+                        
+                      item.interested.map((u)=>{
                           
-                        if (u.user==userid)
-                        {
-                          t=true;
-                        }
-                      })
+                      if (u.user==userid)
+                      {
+                        t=true;
+                      }
+                    })
+                    
                     }
                     {t?(y):(x)}
                     </a>
