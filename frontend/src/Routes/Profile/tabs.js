@@ -242,12 +242,46 @@ const Tabs = () => {
                     className="card event-card"
                     style={{ border: 3 + "px solid pink" }}
                   >
-                    <img
-                      className="card-img-top"
-                      src={item.image_URL}
-                      alt="Event Poster"
-                      style={{ height: 180 + "px" }}
-                    />
+                   {(item.attachment_type==="image")?(
+                 <img
+                 className="card-img-top"
+                 src={item.image_URL}
+                 alt="Event Poster"
+                 style={{ height: 180 + "px" }}
+               />
+              ):(
+                (item.attachment_type==="video")?(
+                  <video
+                  src={item.image_URL}
+                  className="card-img-top post-image"
+                  alt="video"
+                  style={{ height: 180 + "px",width: 310+"px" }}
+                  controls
+                  />
+                ):(
+                  <div style={{background:"steelblue",width:300+"px", height:180+"px",padding:5+"px", marginLeft:10+"px", border:2+"px solid black", borderRadius:2+"%"}}>
+                   <br/>
+                   <br/>
+                    <h5 className="message">
+                      {item.file}
+                    </h5>
+                    <p>{item.size}MB
+                    <br/>
+                    <br/>
+                    <a className="link" href={item.download_URL} style={{float:"right"}}>
+                        <button
+                          style={{background:"steelblue", border:"none"}}
+                        >
+                          <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/download-button-1136559.png"
+                          style={{height:38+"px",width:40+"px", float:"right"}}
+                          alt="img"></img>
+                        </button>
+                    </a>
+                    </p>
+                  </div>
+                )  
+              ) }      
+                    
                     <div className="card-body">
                       <h5 className="card-title">{item.caption}</h5>
                       <hr/>
@@ -374,26 +408,24 @@ const Tabs = () => {
                       style={{ height: 150 + "px" }}
                     />
                     <div className="card-body">
-                      <h5 className="card-title" style={{fontSize:17+"px"}}><span>{item.name.toUpperCase()}</span></h5>
-                      <p className="card-text" style={{fontSize:13+"px"}}>
+                      <h5 className="card-title" style={{fontSize:18+"px"}}><span>{item.name.toUpperCase()}</span></h5>
+                      <p className="card-text" style={{fontSize:18+"px"}}>
                         {nl2br(item.description)}
                         <br />
-                        <span style={{fontSize:14+"px"}}>Event Date:</span>{" "}
+                        <span style={{fontSize:18+"px"}}>Event Date:</span>{" "}
                         {moment(item.date).format("DD/MM/YYYY")}
                         <br />
-                        <span style={{fontSize:14+"px"}}>Event Venue:</span> {item.venue}
+                        <span style={{fontSize:18+"px"}}>Event Time:</span>{" "}
+                        {(item.time)}
                         <br />
-                        <span style={{fontSize:14+"px"}}>Posted By </span>
+                        <span style={{fontSize:18+"px"}}>Event Venue:</span> {item.venue}
+                        <br />
+                        <span style={{fontSize:18+"px"}}>Posted By </span>
                         {item.author._id === userId ? "You" : item.author.name}
                         <span style={{fontSize:14+"px"}}> At </span>{" "}
                         {moment(item.createAt).format("DD/MM/YYYY")}
                       </p>
-                      <a
-                        href={item.registration_link}
-                        className="btn btn-primary"
-                      >
-                        Register Here
-                      </a>
+                      
                     </div>
                   </div>
                 </div>

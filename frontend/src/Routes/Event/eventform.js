@@ -117,7 +117,7 @@ const EventForm = () => {
   };
 
   const fetchUser = (query) => {
-   
+    setMembers([]);
     // setSearch(query);
     if (query !== "") {
       fetch("http://localhost:5000/api/connect/searchUserAsPerSkill", {

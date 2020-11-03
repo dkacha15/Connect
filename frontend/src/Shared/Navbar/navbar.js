@@ -231,7 +231,7 @@ const Navbar = () => {
           )}
           {notificationArr.map((notification) => {
             return (
-              <Link classname="elink" to={notification.link} key={notification._id}>
+              <a classname="elink" href={notification.link} key={notification._id}>
                 <div className="card notifications-card" key={notification._id}>
                 <img
                   className="notifications-user-picture"
@@ -240,21 +240,21 @@ const Navbar = () => {
                 />
                 <div>
                   {notification.marked ? (
-                    <h5 className="notifications-text marked">
+                    <h5 className="notifications-text marked link">
                       {notification.message}
                     </h5>
                   ) : (
-                    <h5 className="notifications-text">
+                    <h5 className="notifications-text link">
                       {notification.message}
                     </h5>
                   )}
                   <hr />
-                  <h6 className="notification-time">
+                  <h6 className="notification-time link">
                     {moment(notification.createdAt).fromNow()}
                   </h6>
                 </div>
               </div>
-              </Link>
+              </a>
             );
           })}
           {notificationArr.length === 0 ? (
