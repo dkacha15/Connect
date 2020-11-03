@@ -4,7 +4,7 @@ const eventSchema = new mongoose.Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
   date: { type: Date, required: true },
-  time: { type: String, required: true },
+  time: { type: String },
   author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
@@ -14,9 +14,7 @@ const eventSchema = new mongoose.Schema({
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
     },
-    btntext:{type: String, required: true, default:"Show Interest"},
   },
   
   poster_url: { type: String, required: true },

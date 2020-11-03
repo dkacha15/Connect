@@ -23,7 +23,9 @@ module.exports = {
       edate,
       poster_url,
       venue,
+      time,
       registration_link,
+      userid
     } = req.body;
     if (!name || !description || !edate || !registration_link) {
       return res.json({ error: "Please Fill The Required Details" });
@@ -35,13 +37,24 @@ module.exports = {
       author: req.user._id,
       poster_url,
       venue,
+      time,
       registration_link,
       createdAt: Date.now(),
     });
     await event
       .save()
       .then((result) => {
+
         if (result) {
+          Event.findByIdAndUpdate(result._id,{
+            $push: {
+              interested: {
+              user: userid,
+              btntext: 'Show Interest',
+            },
+          },
+        }).then((upd)=>{
+
           User.update(
             {
               _id:{$ne: result.author}
@@ -64,10 +77,11 @@ module.exports = {
             message: "Event Created Successfully",
             event: result,
           });
-        } else {
+        })
+       } else {
           return res.json({ error: "Error creating event" });
         }
-      })
+      })  
       .catch((err) => {
         console.log(err);
       });
@@ -79,8 +93,10 @@ module.exports = {
       edate,
       poster_url,
       venue,
+      time,
       registration_link,
-      members
+      members,
+      userid
     } = req.body;
     if (!name || !description || !edate || !registration_link) {
       return res.json({ error: "Please Fill The Required Details" });
@@ -92,6 +108,7 @@ module.exports = {
       author: req.user._id,
       poster_url,
       venue,
+      time,
       registration_link,
       members,
       createdAt: Date.now(),
@@ -100,7 +117,14 @@ module.exports = {
       .save()
       .then((result) => {
         if (result) {
-
+          Event.findByIdAndUpdate(result._id,{
+            $push: {
+              interested: {
+              user: userid,
+              btntext: 'Show Interest',
+            },
+          },
+        }).then((upd)=>{
           id=members.indexOf((result.author).toString());
           members.splice(id,1);
           User.update(
@@ -124,7 +148,7 @@ module.exports = {
             message: "Event Created Successfully",
             event: result,
           });
-        } else {
+        })} else {
           return res.json({ error: "Error creating event" });
         }
       })
