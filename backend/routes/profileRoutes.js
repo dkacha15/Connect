@@ -14,4 +14,5 @@ router.put("/updateProfile", requireLogin, profilectrl.updateProfile);
 router.put("/changePassword", requireLogin, profilectrl.changePassword);
 router.put("/changePicture", requireLogin, profilectrl.changePicture);
 router.put("/removePicture", requireLogin, profilectrl.removePicture);
+router.post("/addCertificate",requireLogin,profilectrl.addCertificate);
 module.exports = router;

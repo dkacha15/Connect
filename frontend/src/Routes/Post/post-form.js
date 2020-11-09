@@ -279,7 +279,6 @@ const PostForm = () => {
                       setfile(e.target.files[0]);
                       setFileName(e.target.files[0].name);
                       setSize(e.target.files[0].size);
-                      console.log(e.target.files[0]);
                     }
                   }}
                 />

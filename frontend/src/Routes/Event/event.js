@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import io from "socket.io-client";
 import { Link } from "react-router-dom";
 import * as moment from "moment";
 
@@ -9,16 +8,10 @@ import "./event.css";
 
 const nl2br = require("react-nl2br");
 
-const ENDPOINT = "http://localhost:5000";
-
-let socket = io(ENDPOINT);
-
 const Event = () => {
   const [events, setEvents] = useState([]);
   const [userType, setUserType] = useState("");
   const [userid, setUserId] = useState();
-  const [btnname,setBtnname]=useState([]);
-  const [temp,setTemp]=useState([]);
   var k=false;
   var t=false;
   var x="Show Interest";
@@ -97,6 +90,7 @@ const Event = () => {
     {
       k=true;
     }
+    return null
   });
   if(!k){
     interested(id);
@@ -148,7 +142,7 @@ const Event = () => {
                       {moment(item.createAt).format("DD/MM/YYYY")}
                     </p>
                     <p></p>
-                    <a
+                    <div
                       key={item._id}
                       className="btn btn-primary"
                       onClick={()=>checkstats(id,item._id)}>
@@ -156,15 +150,16 @@ const Event = () => {
                         
                       item.interested.map((u)=>{
                           
-                      if (u.user==userid)
+                      if (u.user===userid)
                       {
                         t=true;
                       }
+                      return null;
                     })
                     
                     }
                     {t?(y):(x)}
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>

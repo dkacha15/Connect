@@ -7,8 +7,10 @@ import LikedIcon from "../../Images/likedIcon.png";
 import NonLikedIcon from "../../Images/nonLikedIcon.png";
 import CommentIcon from "../../Images/comment.png";
 import CommentedIcon from "../../Images/commented.png";
+import CertificateIcon from "../../Images/certificate.png";
 
 const ENDPOINT = "http://localhost:5000";
+const axios = require("axios");
 
 let socket;
 const nl2br = require("react-nl2br");
@@ -29,6 +31,10 @@ const Tabs = () => {
   const [commentArray, setCommentArray] = useState([]);
   const [commentModal, setCommentModal] = useState(false);
   const [postId, setPostId] = useState("");
+  const [certificateModal,setCertificateModal]=useState(false);
+  const [image, setImage] = useState("");
+  const [skillId,setSkillId]=useState("");
+  const [certificateURL,setCertificateURL]=useState("");
 
   useEffect(() => {
     socket = io(ENDPOINT);
@@ -203,6 +209,44 @@ const Tabs = () => {
         socket.emit("refreshNotifications", {});
       });
   };
+
+  const addCertificate=()=>{
+    const data = new FormData();
+    data.append("file", image);
+    data.append("upload_preset", "connect");
+    data.append("cloud_name", "dy6relv7v");
+
+    const options = {
+      onUploadProgress: (ProgressEvent) => {
+        const { loaded, total } = ProgressEvent;
+        let percentage = Math.floor((loaded * 100) / total);
+        console.log(percentage);
+      },
+    };
+
+    axios.post(
+      "https://api.cloudinary.com/v1_1/dy6relv7v/image/upload",
+      data,
+      options
+    ).then((data)=>{
+      fetch("http://localhost:5000/api/connect/addCertificate",{
+        method:"Post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body:JSON.stringify({
+          skill_id:skillId,
+          url:data.data.url
+        })
+      }).then((res)=>res.json())
+      .then((data)=>{
+        socket.emit("refreshProfile", {});
+        setCertificateModal(false);
+        setImage("");
+      })
+    })
+  }
 
   return (
     <React.Fragment>
@@ -462,6 +506,16 @@ const Tabs = () => {
                     {item.strength * 10}%
                   </div>
                 </div>
+                <button
+                  className="certificate-button"
+                  onClick={()=>{
+                    setCertificateModal(true);
+                    setSkillId(item._id);
+                    setCertificateURL(item.certificate);
+                  }}
+                >
+                <img className="certificate-icon" src={CertificateIcon} alt="Certificate" />
+              </button>
                 <h5
                   className="skill"
                   onClick={() => {
@@ -598,6 +652,45 @@ const Tabs = () => {
                 </div>
               );
             })}
+          </div>
+        </Modal>
+        <Modal
+          visible={certificateModal}
+          width="800"
+          effect="fadeInUp"
+          onClickAway={() => setCertificateModal(false)}
+        >
+          <div className="skill-ratings">
+          {certificateURL===""?(
+              <h4 className="skill-rating-heading">No Certificate</h4>
+            ):(
+              <h4 className="skill-rating-heading">Certificate</h4>
+            )}
+            <div className="skill-certificate-form">
+              <input
+                  type="file"
+                  name="poster"
+                  onChange={(e) => setImage(e.target.files[0])}
+              />
+              <button
+                className="skill-rating-submit-button"
+                type="submit"
+                onClick={()=>{
+                  addCertificate();
+                }}
+              >
+                <img
+                  className="comment-rating-button-icon"
+                  src={PostIcon}
+                  alt="Post"
+                />
+              </button>
+            </div>
+            {certificateURL===""?(
+              <div></div>
+            ):(
+              <img className="certificate-image" src={certificateURL} alt="certificate"/>
+            )}
           </div>
         </Modal>
       </div>

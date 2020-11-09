@@ -1,10 +1,12 @@
+/** @format */
+
 .chat-heading {
   color: lightsteelblue;
   transform: rotate(-90deg);
   float: left;
   font-size: 80px;
   margin-top: 15%;
-  margin-left: -6%;
+  margin-left: -5%;
 }
 
 .header {
@@ -57,7 +59,7 @@
   margin-top: 5px !important;
   margin-left: 5px !important;
   margin-bottom: 5px !important;
-  float:left
+  float: left;
 }
 
 .chat-search-card {
@@ -77,10 +79,10 @@
 }
 .chat-search-view {
   height: 40px !important;
-  width:40px !important;
+  width: 40px !important;
   margin-top: -40px !important;
   margin-right: 10px;
- float: right;
+  float: right;
   margin-bottom: 5px !important;
 }
 .check-box {
@@ -88,13 +90,13 @@
   width: 20px !important;
   margin-top: -30px !important;
   margin-right: 70px;
- float: right;
+  float: right;
   margin-bottom: 5px !important;
 }
 
 .chatRoom-container {
   margin-top: 20px !important;
-  margin-left:-25px !important;
+  margin-left: -25px !important;
   width: 490px !important;
 }
 
@@ -114,9 +116,7 @@
   margin-top: 5px !important;
   margin-left: 5px !important;
   margin-bottom: 5px !important;
-  
 }
-
 
 .chatRoom-user {
   font-weight: bold !important;
@@ -155,23 +155,22 @@
 .your-chat-container {
   overflow-y: scroll !important;
   border-radius: 2% !important;
-  background:rgb(70, 130, 180,0.5);
-  height: 500px !important;
-  margin-right:25px !important;
-  
+  background: rgb(70, 130, 180, 0.5);
+  height: 800px !important;
+  margin-right: 25px !important;
 }
 .your-chat-container::-webkit-scrollbar {
   width: 10px;
-  }
-.your-chat-container::-webkit-scrollbar-track { 
-  background :black ;
+}
+.your-chat-container::-webkit-scrollbar-track {
+  background: black;
   border-radius: 10px;
   border-left: 3px solid black;
   border-right: 3px solid black;
-  }
+}
 
 .your-chat-container::-webkit-scrollbar-thumb:vertical {
-  background:paleturquoise;
+  background: paleturquoise;
   border-radius: 10px;
-  box-shadow:  0 0 6px rgba(0, 0, 0, 0.5);
-  }
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}

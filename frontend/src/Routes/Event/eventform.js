@@ -31,7 +31,9 @@ const EventForm = () => {
   const [members, setMembers] = useState([]);
   const [skill, setSkill] = useState([]);
   const [userSkills, setUserSkills] = useState([]);
+  //eslint-disable-next-line
   const [viewSkill, setViewSkill] = useState([]);
+  //eslint-disable-next-line
   const [tcheck,setTcheck]=useState([]);
 
   useEffect(() => {
@@ -258,12 +260,13 @@ const EventForm = () => {
     var checkboxes=document.getElementsByName('members[]');
     console.log(checkboxes);
     for(var i in checkboxes){
-      if(checkboxes[i].checked==false){
+      if(checkboxes[i].checked===false){
         checkboxes[i].checked=true;
         userDetails.map((user) => {
           if (members.indexOf(user._id) <= -1) {
             members.push(user._id);
           }
+          return null;
         });
       }
     }

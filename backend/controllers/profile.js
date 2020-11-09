@@ -225,4 +225,36 @@ module.exports = {
       }
     });
   },
+
+  async addCertificate(req,res){
+    const {skill_id,url} = req.body;
+
+    User.find(
+      {
+      _id:req.user._id,
+      },
+      {
+        skills:{
+          $elemMatch:{
+            _id:skill_id
+          }
+        }
+      }).then((data)=>{
+        if(data[0].skills[0]){
+          User.updateOne(
+            {
+              _id:req.user._id,
+              "skills._id":skill_id
+            },
+            {
+              $set:{
+                "skills.$.certificate":url,
+              }
+            }
+          ).then(
+            res.json({message:"Certificate added"})
+          )
+        }
+      })
+  }
 };

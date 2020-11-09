@@ -18,6 +18,7 @@ const userSchema = new mongoose.Schema({
     {
       sname: { type: String },
       strength: { type: Number },
+      certificate:{ type:String,default:"" },
       ratings: [
         {
           user_id: { type: mongoose.Types.ObjectId, ref: "User" },

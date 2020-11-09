@@ -8,6 +8,7 @@ import LikedIcon from "../../Images/likedIcon.png";
 import NonLikedIcon from "../../Images/nonLikedIcon.png";
 import CommentIcon from "../../Images/comment.png";
 import CommentedIcon from "../../Images/commented.png";
+import CertificateIcon from "../../Images/certificate.png";
 
 import "./userTabs.css";
 
@@ -36,6 +37,8 @@ const UserTabs = () => {
   const [commentArray, setCommentArray] = useState([]);
   const [postId, setPostId] = useState("");
   const [userId, setUserId] = useState("");
+  const [certificateModal,setCertificateModal]=useState(false);
+  const [certificateURL,setCertificateURL]=useState("");
 
   const userid = useParams();
 
@@ -449,6 +452,15 @@ const UserTabs = () => {
                     {item.strength * 10}%
                   </div>
                 </div>
+                <button
+                  className="certificate-button"
+                  onClick={()=>{
+                    setCertificateModal(true);
+                    setCertificateURL(item.certificate);
+                  }}
+                >
+                <img className="certificate-icon" src={CertificateIcon} alt="Certificate" />
+              </button>
                 <h5
                   className="skill"
                   onClick={() => {
@@ -615,6 +627,25 @@ const UserTabs = () => {
                 </div>
               );
             })}
+          </div>
+        </Modal>
+        <Modal
+          visible={certificateModal}
+          width="800"
+          effect="fadeInUp"
+          onClickAway={() => setCertificateModal(false)}
+        >
+          <div className="skill-ratings">
+          {certificateURL===""?(
+              <h4 className="skill-rating-heading">No Certificate</h4>
+            ):(
+              <h4 className="skill-rating-heading">Certificate</h4>
+            )}
+            {certificateURL===""?(
+              <div></div>
+            ):(
+              <img className="certificate-image" src={certificateURL} alt="certificate"/>
+            )}
           </div>
         </Modal>
       </div>

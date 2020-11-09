@@ -5,7 +5,6 @@ import * as moment from "moment";
 import "./navbar.css";
 import cookie from "react-cookies";
 import io from "socket.io-client";
-import { Link } from "react-router-dom";
 
 const ENDPOINT = "http://localhost:5000";
 

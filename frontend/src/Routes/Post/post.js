@@ -165,7 +165,7 @@ const Posts = () => {
                   controls
                   />
                 ):(
-                  <div style={{background:"steelblue",width:300+"px", height:80+"px",padding:5+"px", marginLeft:10+"px", border:2+"px solid black", borderRadius:2+"%"}}>
+                  <div style={{background:"steelblue",width:400+"px", height:105+"px",padding:5+"px", marginLeft:10+"px", border:2+"px solid black", borderRadius:2+"%"}}>
                     <h5 className="message">
                       {item.file}
                     </h5>
