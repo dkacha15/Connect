@@ -49,7 +49,7 @@ const ResetPassword = () => {
   }
 
   const Message = () => {
-    if (message === "Email Confirmation Not Done") {
+    if (message === "Email Confirmation Not Done" || "User Not Found") {
       window.flash(message, 'error');
       return null;
     }

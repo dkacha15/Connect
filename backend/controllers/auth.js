@@ -164,7 +164,7 @@ module.exports = {
         //     user: { id: founduser._id, name: founduser.name,
         //         type: founduser.type,},
         //   });
-        res.redirect("http://localhost:3000");
+        res.redirect("http://localhost:3000/emailVerified");
       });
     } catch (e) {
       console.log(e);
@@ -230,34 +230,40 @@ module.exports = {
       User.findOne({
         $or: [{ primary_email: email }, { secondary_email: email }],
       }).then((saveUser) => {
-        if (!saveUser.confirm){
-          res.json({message:false,reason:"Email Confirmation Not Done"});
+        if(!saveUser){
+          res.json({message:false,reason:"User Not Found"});
         }
         else{
-        saveUser.resetToken = token;
-        saveUser.expireToken = Date.now() + 3600000;
-        saveUser.save().then((result) => {
-          const url = "http://localhost:3000/reset-password/" + token;
-          let mailOptions = {
-            from: '"CONNECT" <complect.with.connect@gmail.com>',
-            to: email,
-            subject: "Password Reset",
-            html:
-              "<h1>Greetings from Connect!</h1> <br/> Click on the link to reset your password: <br/> <a href=" +
-              url +
-              ">Click Here</a> <br/> <p>Note: The link will expire in one hour</p>",
-          };
-          transporter.sendMail(mailOptions, function (err, data) {
-            if (err) {
-              console.log(err);
-            } else {
-              res.json({
-                message: true,
-              });
-            }
+          if (!saveUser.confirm){
+            res.json({message:false,reason:"Email Confirmation Not Done"});
+          }
+          else{
+          saveUser.resetToken = token;
+          saveUser.expireToken = Date.now() + 3600000;
+          saveUser.save().then((result) => {
+            const url = "http://localhost:3000/reset-password/" + token;
+            let mailOptions = {
+              from: '"CONNECT" <complect.with.connect@gmail.com>',
+              to: email,
+              subject: "Password Reset",
+              html:
+                "<h1>Greetings from Connect!</h1> <br/> Click on the link to reset your password: <br/> <a href=" +
+                url +
+                ">Click Here</a> <br/> <p>Note: The link will expire in one hour</p>",
+            };
+            transporter.sendMail(mailOptions, function (err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+                res.json({
+                  message: true,
+                });
+              }
+            });
           });
-        });
-      }
+        }
+        }
+        
       });
     });
   },

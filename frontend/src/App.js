@@ -24,6 +24,7 @@ import EditProfilePage from "./Routes/Profile/editProfile";
 import ResetPasswordPage from "./Routes/Login/resetPass";
 import ForgetPasswordMailPage from "./Routes/Login/resetMail";
 import ForgetPasswordPage from "./Routes/Login/forgetPass";
+import EmailVerifiedPage from "./Routes/Login/emailVeri";
 
 const Routing = () => {
   const token = cookie.load("access_token");
@@ -106,6 +107,9 @@ const Routing = () => {
           </Route>
           <Route path="/forgetPassword">
             <ResetPasswordPage />
+          </Route>
+          <Route path="/emailVerified">
+            <EmailVerifiedPage />
           </Route>
           <Redirect to="/">
             <Landing />
