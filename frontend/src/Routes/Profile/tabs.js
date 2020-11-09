@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-awesome-modal";
 import io from "socket.io-client";
+import Bus from '../../Shared/Utils/bus';
+import Flash from "../../Shared/Flash/index";
 import * as moment from "moment";
 import PostIcon from "../../Images/postIcon.png";
 import LikedIcon from "../../Images/likedIcon.png";
@@ -35,6 +37,8 @@ const Tabs = () => {
   const [image, setImage] = useState("");
   const [skillId,setSkillId]=useState("");
   const [certificateURL,setCertificateURL]=useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     socket = io(ENDPOINT);
@@ -74,6 +78,7 @@ const Tabs = () => {
     });
   }, []);
 
+  window.flash = (message, type="success") => Bus.emit('flash', ({message, type}));
   const Posts = () => {
     setPost(true);
     setEvent(false);
@@ -215,12 +220,13 @@ const Tabs = () => {
     data.append("file", image);
     data.append("upload_preset", "connect");
     data.append("cloud_name", "dy6relv7v");
-
+    setImage("");
     const options = {
       onUploadProgress: (ProgressEvent) => {
         const { loaded, total } = ProgressEvent;
         let percentage = Math.floor((loaded * 100) / total);
-        console.log(percentage);
+        setMessage(" Uploading:" + percentage + "%");
+        //console.log(percentage);
       },
     };
 
@@ -241,15 +247,31 @@ const Tabs = () => {
         })
       }).then((res)=>res.json())
       .then((data)=>{
+        
         socket.emit("refreshProfile", {});
-        setCertificateModal(false);
-        setImage("");
+        setCertificateModal(false);  
       })
     })
   }
 
+  const Message = () => {
+    if (message) {
+      window.flash(message, 'success');
+      setMessage("");
+      return null;
+    } else if (error){
+      window.flash(error, 'error');
+      setError("");
+      return null;
+    }
+      else {
+      return null;
+    }
+  };
   return (
     <React.Fragment>
+      {/* <Flash/> */}
+      <Message />
       <div className="row justify-content-center">
         <button className="btn btn-primary" onClick={() => Posts()}>
           Posts
@@ -656,10 +678,11 @@ const Tabs = () => {
         </Modal>
         <Modal
           visible={certificateModal}
-          width="800"
+          width="530"
           effect="fadeInUp"
           onClickAway={() => setCertificateModal(false)}
         >
+          
           <div className="skill-ratings">
           {certificateURL===""?(
               <h4 className="skill-rating-heading">No Certificate</h4>
@@ -687,11 +710,13 @@ const Tabs = () => {
               </button>
             </div>
             {certificateURL===""?(
-              <div></div>
+              <div><h3>No certificates uploaded!</h3></div>
             ):(
               <img className="certificate-image" src={certificateURL} alt="certificate"/>
             )}
+
           </div>
+          <Flash/>
         </Modal>
       </div>
     </React.Fragment>

@@ -5,6 +5,7 @@ import io from "socket.io-client";
 import Modal from "react-awesome-modal";
 import Loader from "../../Shared/loader";
 import Navbar from "../../Shared/Navbar/navbar";
+import CertificateIcon from "../../Images/certificate.png";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -35,6 +36,9 @@ const EventForm = () => {
   const [viewSkill, setViewSkill] = useState([]);
   //eslint-disable-next-line
   const [tcheck,setTcheck]=useState([]);
+  const [certificateModal,setCertificateModal]=useState(false);
+  const [skillId,setSkillId]=useState("");
+  const [certificateURL,setCertificateURL]=useState("");
 
   useEffect(() => {
     fetch("http://localhost:5000/api/connect/getCurrentUser", {
@@ -459,7 +463,10 @@ const EventForm = () => {
                                       
                                     }}
                                   >
-                               <h4>{skill.sname}</h4>
+                               <h5 style={{
+                                  textAlign:"center"
+                                  
+                                }}>{skill.sname}</h5>
                                <div class="progress">
                                  <div
                                    class="progress-bar"
@@ -472,6 +479,23 @@ const EventForm = () => {
                                    {skill.strength * 10}%
                                  </div>
                                </div>
+                               <button
+                                className="certificate-button"
+                                style={{
+                                  background: "lightsteelblue",
+                                  padding: 5 + "px",
+                                  marginLeft: 35 + "px",
+                                  
+                                  
+                                }}
+                                onClick={()=>{
+                                  setCertificateModal(true);
+                                  setSkillId(skill._id);
+                                  setCertificateURL(skill.certificate);
+                                }}
+                              >
+                              <img className="certificate-icon" src={CertificateIcon} alt="Certificate" />
+                            </button>
                              </div>
                             )
                               })
@@ -511,6 +535,26 @@ const EventForm = () => {
                 </div>
                 
               </Modal>
+              <Modal
+          visible={certificateModal}
+          width="500"
+          effect="fadeInUp"
+          onClickAway={() => setCertificateModal(false)}
+        >
+          <div className="skill-ratings">
+          {certificateURL===""?(
+              <h4 className="skill-rating-heading">No Certificate</h4>
+            ):(
+              <h4 className="skill-rating-heading">Certificate</h4>
+            )}
+              
+            {certificateURL===""?(
+              <div><h3>No certificates uploaded!</h3></div>
+            ):(
+              <img className="certificate-image" src={certificateURL} alt="certificate"/>
+            )}
+          </div>
+        </Modal>
         <Message />
       </div>
     </React.Fragment>

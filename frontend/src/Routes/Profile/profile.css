@@ -51,11 +51,12 @@
 .certificate-image {
   margin-left: 30px !important;
   margin-bottom: 10px !important;
-  width: 720px !important;
+  width: 450px !important;
+  border:2px solid black;
 }
 
 .skill-certificate-form {
   display: flex !important;
   margin-bottom: 5px !important;
-  margin-left: 220px !important;
+  margin-left: 75px !important;
 }
