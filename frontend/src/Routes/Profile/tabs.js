@@ -710,7 +710,7 @@ const Tabs = () => {
               </button>
             </div>
             {certificateURL===""?(
-              <div><h3>No certificates uploaded!</h3></div>
+              <div><h3 className="no-certificate">No certificates uploaded!</h3></div>
             ):(
               <img className="certificate-image" src={certificateURL} alt="certificate"/>
             )}

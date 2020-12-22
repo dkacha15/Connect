@@ -37,6 +37,7 @@ const EventForm = () => {
   //eslint-disable-next-line
   const [tcheck,setTcheck]=useState([]);
   const [certificateModal,setCertificateModal]=useState(false);
+  //eslint-disable-next-line
   const [skillId,setSkillId]=useState("");
   const [certificateURL,setCertificateURL]=useState("");
 

@@ -631,7 +631,7 @@ const UserTabs = () => {
         </Modal>
         <Modal
           visible={certificateModal}
-          width="800"
+          width="530"
           effect="fadeInUp"
           onClickAway={() => setCertificateModal(false)}
         >

@@ -4,7 +4,7 @@
  * @format
  */
 
-.chatbox-container {
+/* .chatbox-container {
   margin-top: 20px !important;
   margin-left: -1% !important;
   width: 700px !important;
@@ -195,11 +195,11 @@
 
 .endOfMessages {
   margin-bottom: 0px !important;
-}
+} */
 
 /* Dhruv */
 
-/* .chatbox-container {
+.chatbox-container {
   margin-top: 20px !important;
   margin-left: -400px !important;
   width: 900px !important;
@@ -384,4 +384,4 @@
 #chat::placeholder {
   color: black;
   opacity: 1;
-} */
+}
