@@ -1,6 +1,6 @@
 module.exports = {
-  MONGODB_URL: "mongodb://localhost:27017/connect",
-  JWT_SECRET: "Dhruv&Khy_Project",
-  EMAIL: "complect.with.connect@gmail.com",
-  PASS: "Dhruv&Khy_Project",
+  MONGODB_URL: process.env.MONGODB_URL,
+  JWT_SECRET: process.env.JWT_SECRET,
+  EMAIL: process.env.EMAIL,
+  PASS: process.env.PASS,
 };
